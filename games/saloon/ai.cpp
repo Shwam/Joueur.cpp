@@ -3,6 +3,7 @@
 
 #include "ai.hpp"
 #include <algorithm>
+#include <cmath>
 
 // <<-- Creer-Merge: includes -->> - Code you add between this comment and the end comment will be preserved between Creer re-runs.
 // You can add #includes here for your AI.
@@ -176,8 +177,7 @@ Tile AI::nearestEnemy(Tile tile)
 int AI::distance(Tile t1, Tile t2)
 {
     // Manhattan Distance
-    int dist = (t1->x - t2->x) + (t1->y - t2->y);
-    return dist>0?dist:-dist;
+    return abs(t1->x - t2->x) + abs(t1->y - t2->y);
 }
 
 int AI::numCowboys()
